@@ -1,0 +1,1 @@
+create table if not exists invoices (invoice_id varchar(255) not null, body varchar(255), date datetime(6), invoice_from varchar(255), invoice_to varchar(255), subject varchar(255), primary key (invoice_id));

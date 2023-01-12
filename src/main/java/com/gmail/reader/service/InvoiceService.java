@@ -1,5 +1,6 @@
 package com.gmail.reader.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,11 @@ public class InvoiceService {
 			return commonResponse;
 		}
 
+	}
+
+	public ArrayList<InvoiceEntity> getAllInvoices() {
+		ArrayList<InvoiceEntity> invoiceList = (ArrayList<InvoiceEntity>) this.invoiceRepository.findAll();
+		return invoiceList;
 	}
 
 }

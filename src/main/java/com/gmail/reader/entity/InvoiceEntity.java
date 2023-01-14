@@ -23,8 +23,6 @@ public class InvoiceEntity {
 	private String invoiceFrom;
 	@Column
 	private String invoiceTo;
-	@Column
-	private String body;
 
 	public String getInvoiceId() {
 		return invoiceId;
@@ -64,14 +62,6 @@ public class InvoiceEntity {
 
 	public void setInvoiceTo(String invoiceTo) {
 		this.invoiceTo = invoiceTo;
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
 	}
 
 }

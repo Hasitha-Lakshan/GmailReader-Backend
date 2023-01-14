@@ -12,7 +12,6 @@ public class InvoiceDetail {
 	private String subject;
 	@JsonFormat(pattern = "dd-MM-yyyy hh:mm:ss a")
 	private Date date;
-	private String body;
 
 	public String getId() {
 		return id;
@@ -52,14 +51,6 @@ public class InvoiceDetail {
 
 	public void setDate(Date date) {
 		this.date = date;
-	}
-
-	public String getBody() {
-		return body;
-	}
-
-	public void setBody(String body) {
-		this.body = body;
 	}
 
 }

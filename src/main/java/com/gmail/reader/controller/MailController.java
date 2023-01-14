@@ -22,11 +22,13 @@ public class MailController {
 	@Autowired
 	private InvoiceService invoiceService;
 
+	// End point for save invoice details to database
 	@PostMapping("saveinvoice")
 	public ResponseEntity<CommonResponse> saveInvoices(@RequestBody InvoiceDetail invoiceDetail) {
 		return new ResponseEntity<>(this.invoiceService.saveInvoices(invoiceDetail), HttpStatus.OK);
 	}
 
+	// End point for get all invoice details from database
 	@GetMapping("getallinvoice")
 	public ResponseEntity<ArrayList<InvoiceEntity>> checkForInvoices() {
 		return new ResponseEntity<>(this.invoiceService.getAllInvoices(), HttpStatus.OK);

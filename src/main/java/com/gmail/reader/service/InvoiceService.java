@@ -20,6 +20,7 @@ public class InvoiceService {
 	@Autowired
 	private InvoiceRepository invoiceRepository;
 
+	// This method is used to map invoice details from InvoiceDetail type to InvoiceEntity and save the details in database
 	public CommonResponse saveInvoices(InvoiceDetail invoiceDetail) {
 
 		if (invoiceDetail != null) {
@@ -29,7 +30,6 @@ public class InvoiceService {
 			invoiceEntity.setInvoiceFrom(invoiceDetail.getInvoiceFrom());
 			invoiceEntity.setInvoiceTo(invoiceDetail.getInvoiceTo());
 			invoiceEntity.setSubject(invoiceDetail.getSubject());
-			invoiceEntity.setBody(invoiceDetail.getBody());
 			invoiceRepository.save(invoiceEntity);
 
 			commonResponse.setMessage("Data saved");
@@ -46,8 +46,9 @@ public class InvoiceService {
 
 	}
 
+	// This method is used to get all invoice details from database
 	public ArrayList<InvoiceEntity> getAllInvoices() {
-		ArrayList<InvoiceEntity> invoiceList = (ArrayList<InvoiceEntity>) this.invoiceRepository.findAll();
+		ArrayList<InvoiceEntity> invoiceList = this.invoiceRepository.getAllInvoiceDetails();
 		return invoiceList;
 	}
 

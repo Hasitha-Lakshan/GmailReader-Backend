@@ -9,9 +9,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @EnableWebMvc
 public class WebConfig implements WebMvcConfigurer {
 
+	// This method is used to configure CORS
 	@Override
 	public void addCorsMappings(CorsRegistry corsRegistry) {
-
 		corsRegistry.addMapping("/api/**").allowedOrigins("*").maxAge(3600L).allowedHeaders("*").allowedMethods("*");
 	}
 
